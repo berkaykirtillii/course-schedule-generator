@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Download Schedule</title>
+    
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/fontawesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/fontawesome.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <script>
+      function addManuel(){
+        var crs = document.createElement("p");
+        var classroom = document.createElement("p");
+        crs.className="scheduleP";
+        classroom.className="scheduleP";
+
+        var selectedCourse = document.getElementById("courses");
+        var selectedClassroom = document.getElementById("classes");
+
+        var strClass = selectedClassroom.options[selectedClassroom.selectedIndex].text;
+        var strCourse = selectedCourse.options[selectedCourse.selectedIndex].text;     
+
+        crs.innerHTML = strCourse;
+        classroom.innerHTML = strClass;
+        document.getElementById("m1").appendChild(crs);
+        document.getElementById("m1").appendChild(classroom);
+      }
+    </script> 
+  </head>
+  <body >
+    <div class="container" style="border:solid 1px white;background-color:white;">
+        <!-- Organizer header-->
+        <div class="page-user-info row">
+           <h4 class="col-md-6" stlye="float:left;font-weight:bolder !important;">Final version of Course Schedule</h4>
+           <div class="dropdown show col-md-6">
+               
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownUserButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                <i class="fa fa-user"></i>  User22
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownUserButton">
+              <a class="dropdown-item" href="organizerCheckInfos.html">Check Infos</a>
+              <a class="dropdown-item" href="indexxx.html">Logout</a>
+            </div>
+          </div>
+        </div>
+        <hr style="margin-top:6px !important;margin-bottom:0px !important;">
+        <div class="alert alert-primary" style="width:50%;margin-left:23%;text-align:center;" role="alert">
+            <i class="fa fa-exclamation-circle"></i>
+            The curriculum, which is the result of the changes, is as follows.
+              </div>
+        <!--Organizer Body-->
+        
+        <div class="course-table course-table-finish offset-1">
+          <select>
+            <option >1. Class</option>
+            <option><button onClick="window.location.reload();">2. Class</button></option>
+            <option onClick="window.location.href=window.location.href">3. Class</option>
+            <option>4. Class</option>
+          </select>
+          <table border="1" cellpadding="20" cellspacing="10" style="cursor:default !important;">
+            <tr>
+              <th></th>
+              <th>08.00-08.50</th>
+              <th>09.00-09.50</th>
+              <th>10.00-10.50</th>
+              <th>11.00-11.50</th>
+              <th>13.00-13.50</th>
+              <th>14.00-14.50</th>
+              <th>15.00-15.50</th>
+              <th>16.00-16.50</th>
+          </tr>
+          <tr>
+              <th>Pazartesi</th>
+              <td><p class="scheduleP">CENG101</p><p class="scheduleP">B414</p></td>
+              <td><p class="scheduleP">CENG101</p><p class="scheduleP">B414</p></td>
+              <td></td>
+              <td><p class="scheduleP">CENG103</p><p class="scheduleP">B414</p></td>
+              <td><p class="scheduleP">CENG103</p><p class="scheduleP">B414</p></td>
+              <td></td>
+              <td></td>
+              <td></td>
+          </tr>
+          <tr>
+              <th>Salı</th>
+              <td><p class="scheduleP">MATH101</p><p class="scheduleP">C503</p></td>
+              <td><p class="scheduleP">MATH101</p><p class="scheduleP">C503</p></td>
+              <td></td>
+              <td><p class="scheduleP">ENGR101</p><p class="scheduleP">A210</p></td>
+              <td></td>
+              <td><p class="scheduleP">PHY101</p><p class="scheduleP">B414</p></td>
+              <td><p class="scheduleP">PHY101</p><p class="scheduleP">B414</p></td>
+              <td></td>
+          </tr>
+          <tr>
+              <th>Çarşamba</th>
+              <td></td>
+              <td></td>
+              <td><p class="scheduleP">CENG101</p><p class="scheduleP">B414</p></td>
+              <td><p class="scheduleP">CENG101</p><p class="scheduleP">B414</p></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+          </tr>
+          <tr>
+              <th>Perşembe</th>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td><p class="scheduleP">CENG104</p><p class="scheduleP">B414</p></td>
+              <td><p class="scheduleP">CENG104</p><p class="scheduleP">B414</p></td>
+              <td></td>
+              <td></td>
+          </tr>
+          <tr>
+              <th>Cuma</th>
+              <td></td>
+              <td></td>
+              <td><p class="scheduleP">CENG103</p><p class="scheduleP">B414</p></td>
+              <td><p class="scheduleP">CENG103</p><p class="scheduleP">B414</p></td>
+              <td><p class="scheduleP">CENG103</p><p class="scheduleP">B414</p></td>
+              <td></td>
+              <td></td>
+              <td><p class="scheduleP">CENG102</p><p class="scheduleP">C507</p></td>
+          </tr>
+         </table>
+      <!-- Modal -->
+      <div class="modal" id="manuel" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header" style="background-color: #004085;">
+              <h5 class="modal-title" id="staticBackdropLabel" style="color:white;">Manuel Choosing Course</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body text-center">
+                   <select id="courses">
+                     <option selected>Select Course</option>
+                     <option>CENG310</option>
+                     <option>MATH101</option>
+                     <option>CENG307</option>
+                     <option>ENGR404</option>
+                   </select>
+                   <select id="classes">
+                    <option selected>Select Classrom</option>
+                    <option>C507</option>
+                    <option>B414</option>
+                    <option>C503</option>
+                    <option>AB109</option>
+                  </select>
+            </div>
+            
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" onclick="addManuel()" data-dismiss="modal">OK</button>
+            </div>
+         </div>
+       </div>
+    </div>   
+        </div>
+        
+
+        <div class="cancel-save-btn">
+            <div class="row">
+              <div class="col-md-1">
+                <button type="button" class="btn btn-danger" onclick="window.location='organizerCreateTable.html'">
+                  <i class="fa fa-arrow-left" style="margin-right:5px;"></i>Cancel
+                </button>
+              </div>
+              <div class="col-md-6 offset-4 hvr-icon-hang">
+                   <button type="button" class="btn btn-danger download hvr-icon-hang">
+                       <i class="fa fa-download hvr-icon-hang" style="margin-right:5px;"></i>Download</button>
+               <!-- Modal -->
+                                 
+              </div> 
+            </div>
+          </div>         
+        
+
+    </div>
+    
+    <div id="bos-div" style="height:144px !important;"></div>
+       
+  </body>
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hour of Lunch</title>
+    
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/fontawesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/fontawesome.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <script>
+        $(function(){  // sadece bir checkbox seçimi
+          $("input:checkbox").on('click',function(){
+              var $box = $(this);
+              if($box.is(":checked")){
+                  var group = "input:checkbox[name='" + $box.attr("name") + "']";
+                  $(group).prop("checked",false);
+                  $box.prop("checked",true);
+              }
+              else{
+                  $box.prop("checked",false);
+              }
+          });
+        });
+      </script> 
+    <script type="text/javascript">  //hour from to active and de-active
+        $(document).ready(function(){
+           $("#Radio1").click(function(){
+               $("#from-to").toggleClass("hour-active");
+
+               var isChecked = $("#Radio1:checked").length;
+               if(isChecked){
+                  $("#bos-div").css({"height":"109px"});
+               }
+               else{
+                 $("#bos-div").css({"height":"194px"});
+               }
+           });
+        });
+        $(document).ready(function(){
+           $("#Radio2").click(function(){
+               $("#from-to").removeClass("hour-active");
+               $("#bos-div").css({"height":"194px"});
+           });
+        });
+    </script> 
+    
+  </head>
+  <body >
+    <div class="container" style="border:solid 1px white;background-color:white;">
+        <!-- Organizer header-->
+        <div class="page-user-info row">
+           <h4 class="col-md-6" stlye="float:left;font-weight:bolder !important;">Organizer Hour of Lunch Page</h4>
+           <div class="dropdown show col-md-6">
+               
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownUserButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                <i class="fa fa-user"></i>  User22
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownUserButton">
+              <a class="dropdown-item" href="organizerCheckInfos.html">Check Infos</a>
+              <a class="dropdown-item" href="indexxx.html">Logout</a>
+            </div>
+          </div>
+        </div>
+        <hr style="margin-top:6px !important;margin-bottom:0px !important;">
+        <!---->
+
+        <div class="steps">
+            <div id="myDIV">
+              <button class="btn-stages" onclick="window.location='organizerCreateTable.html'">Create Table</button>
+              <button class="btn-stages" onclick="window.location='organizerClassLabFeature.html'">Class-Lab Features</button>
+              <button class="btn-stages active" >Special Situation</button>
+              <button class="btn-stages" onclick="window.location='organizerManuelChoosing.html'">Manuel Choosing</button>
+            </div>
+          </div>
+
+          <div class="alert alert-primary" style="width:40%;margin-left:30%;text-align:center;" role="alert">
+            <i class="fa fa-exclamation-circle"></i>
+            If your program has a lunch, you can set the times here.
+              </div>
+        
+        <!--Organizer Body-->
+        <div class="lunchHours">
+            <div class="row">
+              <div class="input-group offset-4">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" style="width:150px;"><h4> Option of Lunch:</h4></span>
+                </div>
+                <span class="input-group-text" style="width: 23%;padding-left: 23px;background-color:white;"> 
+                   <h4>Yes</h4> <input type="checkbox" aria-label="Checkbox for following text input"
+                        name="projection[1][]" id="Radio1" value="0" 
+                        style="margin-left:5px;margin-right:20px;width:20px;height:20px;">
+    
+                    <h4>No</h4>  <input type="checkbox" aria-label="Checkbox for following text input"
+                        name="projection[1][]" id="Radio2" value="0" 
+                        style="margin-left:5px;width:20px;height:20px;">
+                </span>
+              </div>
+            </div>
+            <div class="optionalLunch" id="from-to" style="margin-left:33%;">
+                <div class="row">
+                    <div class="hourFrom ">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                              <span class="input-group-text" style="width:60px;height:34px;"><h4>From:</h4></span>
+                            </div>
+                            <input type="time"  class="form-control" style="width:80px !important;" >                          
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="hourTo">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                              <span class="input-group-text" style="width:60px;height: 34px;"><h4>To: </h4></span>
+                            </div>
+                            <input type="time"  class="form-control" style="width:80px !important;">
+                          </div>
+                      </div>
+                </div>              
+            </div>
+        </div>
+        
+        <div class="cancel-save-btn">
+            <div class="row" style="margin-left:0.5%;">
+              <div class="col-md-2 offset-4">
+                <button type="button" class="btn btn-danger" onclick="window.location='organizerSpecialSituation.html'">
+                    <i class="fa fa-arrow-left" style="margin-right:5px;"></i>Cancel
+                  </button>  
+              </div>
+              <div class="col-md-6">
+                   <button type="button" class="btn btn-success" data-toggle="modal" data-target="#saving">Save</button>
+               <!-- Modal -->
+                   <div class="modal" id="saving" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                       <div class="modal-dialog" role="document">
+                         <div class="modal-content">
+                           <div class="modal-header" style="background-color: #449d20;">
+                             <h5 class="modal-title" id="staticBackdropLabel">Saved</h5>
+                               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                 <span aria-hidden="true">&times;</span>
+                               </button>
+                           </div>
+                           <div class="modal-body">
+                                  <p>Your changes have been successful.</p>
+                           </div>
+                        </div>
+                      </div>
+                   </div>                  
+              </div> 
+            </div>
+          </div>
+          <div class="offset-5">
+            <div class="arrow tick" onclick="window.location='finishPage.html'" style="margin-left: 9%;margin-top: -30px;">
+                <i class="fa fa-check-circle"></i>
+                <p style="margin-left:4px;">Finish</p>
+              </div>
+         </div>
+        
+
+    </div>
+    
+    <div id="bos-div" style="height:194px !important;"></div>
+
+       
+  </body>
+</html>

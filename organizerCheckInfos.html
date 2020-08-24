@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Check Informations Page</title>
+    
+    <link rel="stylesheet" type="text/javascript" href="js/index.js">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/fontawesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/fontawesome.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <script>
+      $(function(){
+        $("input:checkbox").on('click',function(){
+            var $box = $(this);
+            if($box.is(":checked")){
+                var group = "input:checkbox[name='" + $box.attr("name") + "']";
+                $(group).prop("checked",false);
+                $box.prop("checked",true);
+            }
+            else{
+                $box.prop("checked",false);
+            }
+        });
+      });
+    </script> 
+    <script>
+      function filterCourses(){
+         var text = document.getElementById("input-text").value;
+         text = text.toLowerCase();
+         var courses = document.getElementsByClassName("card col-md-6 offset-3");
+         console.log(courses);
+
+         Array.from(courses).forEach(function(course){
+            var courseName = course.textContent;
+            if(courseName.toLowerCase().indexOf(text) != -1){
+              course.style.display = "block";
+            }
+            else{
+              course.style.display = "none";
+            }
+         })
+      }
+    </script>
+
+  </head>
+  <body >
+    <div class="container" style="border:solid 1px white;background-color:white;">
+      <!-- Organizer header-->
+      <div class="page-user-info row">
+         <h3 class="col-md-6" stlye="float:left;font-weight:bolder !important;">Organizer Course Information Page</h3>
+         <div class="dropdown show col-md-6">
+             
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownUserButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+              <i class="fa fa-user"></i>  User22
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownUserButton">
+            <a class="dropdown-item" href="organizerCreateTable.html">Back to Main</a>
+            <a class="dropdown-item" href="indexxx.html">Logout</a>
+          </div>
+        </div>
+      </div>
+      <hr style="margin-top:6px !important;margin-bottom:0px !important;">
+      
+      <div class="alert alert-primary" style="width:52%;margin-left:24%;text-align:center;" role="alert">
+          <i class="fa fa-exclamation-circle"></i>
+          From this screen, you can view and edit the information entered by teachers.
+            </div>
+      
+      <!--Organizer Body-->
+      <div class="header-check">
+          <h3 data-aos="zoom-in" data-aos-duration="200">CHECK</h3>
+          <h5 data-aos="zoom-in" data-aos-duration="400">Course Informations</h5>
+          <div class="input-group" data-aos="zoom-in" data-aos-duration="600">
+            <input type="text" id="input-text" style="width:20%;margin-left:33%;padding-left:5px;" placeholder="Search Course">
+            <button onclick="filterCourses()"><i class="fa fa-search"></i></button>
+          </div>
+      </div>
+      
+      <div class="card col-md-6 offset-3" style="margin-bottom:4%;" data-aos="zoom-in" data-aos-duration="800">
+        <h4 style="text-align:center;" id="forAlert1" >Human Computer Interaction</h4>
+        <hr style="margin-top:0;margin-bottom:0;">
+        <div class="input-group check-input">
+           <div class="input-group-prepend">
+             <span class="input-group-text">Course Name :</span>
+           </div>
+           <input type="text" class="form-control" id="course-input1" style="margin-right: 14rem;" 
+           placeholder="Human Computer Interaction" disabled>
+         </div>
+         <div class="input-group check-input" id="course1">
+           <div class="input-group-prepend">
+             <span class="input-group-text">Course Code :</span>
+           </div>
+           <span style="width:58%;">
+           <input type="text"  class="form-control" id="code-input1"
+            placeholder="CENG310" disabled></span>
+            <button type="button" class="btn btn-danger" id="delete-btn1"
+            onclick="deleteCheckCourse1()" style="padding-right:1%;margin-left:5rem;display:none;">
+              <i class="fa fa-minus" style="margin-right:5px;"></i>Delete</button>
+         </div>
+         <div class="input-group check-input" style="padding-top:3% !important;">
+          <div class="input-group-prepend">
+            <span class="input-group-text">Class Grade :</span>
+          </div>
+          <select disabled style="width:58%;height:3rem;" id="grade-input1">
+            <option>1.class</option>
+            <option>2.class</option>
+            <option selected>3.class</option>
+            <option>4.class</option>
+          </select>
+          <button type="button" class="btn btn-primary" id="edit-btn1" 
+          onclick="edit1()" style="padding-right:3%;margin-left:5rem;">
+            <i class="fa fa-pencil" style="margin-right:5px;"></i>Edit</button>
+        </div>
+         <div class="input-group check-input" >
+            <div class="input-group-prepend" >
+              <span class="input-group-text" > Projection :</span>
+            </div>
+            <span class="input-group-text" style="width:58%;padding-left:15%;background-color:white;"> 
+              <h5>Yes</h5> <input type="checkbox" aria-label="Checkbox for following text input" checked disabled
+                    name="projection[1][]" id="projection-input11" value="1" style="margin-left:5px;margin-right:20px;width:25px;height:25px;">
+      
+              <h5>No</h5> <input type="checkbox" aria-label="Checkbox for following text input" disabled
+                    name="projection[1][]" id="projection-input12" value="0" style="margin-left:5px;width:25px;height:25px;">
+            </span>
+            <button type="button" class="btn btn-success" id="save-btn1"
+            onclick="edit1()" style="padding-right:2%;margin-left:5rem;display:none;">
+              <i class="fa fa-save" style="margin-right:5px;"></i>Save</button>
+          </div>
+          <div class="input-group check-input" style="padding-top:3% !important;padding-bottom:3% !important;">
+            <div class="input-group-prepend">
+              <span class="input-group-text">Lab Type:</span>
+            </div>
+            <select disabled style="width:58%;" id="lab-input1">
+              <option>Physics</option>
+              <option>Chemistry</option>
+              <option selected>Computer</option>
+              <option>Math</option>
+            </select>
+          </div>                             
+      </div>
+      <div class="card col-md-6 offset-3"  id="Advanced Calculus" style="margin-bottom:4%;">
+        <h4 style="text-align:center;" >Advanced Calculus</h4>
+        <hr style="margin-top:0;margin-bottom:0;">
+        <div class="input-group check-input">
+           <div class="input-group-prepend">
+             <span class="input-group-text">Course Name :</span>
+           </div>
+           <input type="text" class="form-control" id="course-input2" style="margin-right: 14rem;" 
+           placeholder="Advanced Calculus" disabled>
+         </div>
+         <div class="input-group check-input" id="course2">
+           <div class="input-group-prepend">
+             <span class="input-group-text">Course Code :</span>
+           </div>
+           <span style="width:58%;">
+           <input type="text"  class="form-control" id="code-input2"
+            placeholder="MATH102" disabled></span>
+            <button type="button" class="btn btn-danger" id="delete-btn2"
+            onclick="deleteCheckCourse2()" style="padding-right:1%;margin-left:5rem;display:none;">
+              <i class="fa fa-minus" style="margin-right:5px;"></i>Delete</button>
+         </div>
+         <div class="input-group check-input" style="padding-top:3% !important;">
+          <div class="input-group-prepend">
+            <span class="input-group-text">Class Grade :</span>
+          </div>
+          <select disabled style="width:58%;height:3rem;" id="grade-input2">
+            <option selected >1.class</option>
+            <option>2.class</option>
+            <option>3.class</option>
+            <option>4.class</option>
+          </select>
+          <button type="button" class="btn btn-primary" id="edit-btn2" 
+          onclick="edit2()" style="padding-right:3%;margin-left:5rem;">
+            <i class="fa fa-pencil" style="margin-right:5px;"></i>Edit</button>
+        </div>
+         <div class="input-group check-input" >
+            <div class="input-group-prepend" >
+              <span class="input-group-text" > Projection :</span>
+            </div>
+            <span class="input-group-text" style="width:58%;padding-left:15%;background-color:white;"> 
+              <h5>Yes</h5> <input type="checkbox" aria-label="Checkbox for following text input" disabled
+                    name="projection[1][]" id="projection-input21" value="1" style="margin-left:5px;margin-right:20px;width:25px;height:25px;">
+      
+              <h5>No</h5> <input type="checkbox" aria-label="Checkbox for following text input" disabled checked
+                    name="projection[1][]" id="projection-input22" value="0" style="margin-left:5px;width:25px;height:25px;">
+            </span>
+            <button type="button" class="btn btn-success" id="save-btn2"
+            onclick="edit2()" style="padding-right:2%;margin-left:5rem;display:none;">
+              <i class="fa fa-save" style="margin-right:5px;"></i>Save</button>
+          </div>
+          <div class="input-group check-input" style="padding-top:3% !important;padding-bottom:3% !important;">
+            <div class="input-group-prepend">
+              <span class="input-group-text">Lab Type:</span>
+            </div>
+            <select disabled style="width:58%;" id="lab-input2">
+              <option>Physics</option>
+              <option>Chemistry</option>
+              <option>Computer</option>
+              <option selected>Math</option>
+            </select>
+          </div>                             
+      </div>
+      <div class="card col-md-6 offset-3"  style="margin-bottom:4%;">
+        <h4 style="text-align:center;" id="forAlert3" >Artificial Intelligence</h4>
+        <hr style="margin-top:0;margin-bottom:0;">
+        <div class="input-group check-input">
+           <div class="input-group-prepend">
+             <span class="input-group-text">Course Name :</span>
+           </div>
+           <input type="text" class="form-control" id="course-input3" style="margin-right: 14rem;" 
+           placeholder="Artificial İntelligence" disabled>
+         </div>
+         <div class="input-group check-input" id="course3">
+           <div class="input-group-prepend">
+             <span class="input-group-text">Course Code :</span>
+           </div>
+           <span style="width:58%;">
+           <input type="text"  class="form-control" id="code-input3"
+            placeholder="CENG317" disabled></span>
+            <button type="button" class="btn btn-danger" id="delete-btn3"
+            onclick="deleteCheckCourse3()" style="padding-right:1%;margin-left:5rem;display:none;">
+              <i class="fa fa-minus" style="margin-right:5px;"></i>Delete</button>
+         </div>
+         <div class="input-group check-input" style="padding-top:3% !important;">
+          <div class="input-group-prepend">
+            <span class="input-group-text">Class Grade :</span>
+          </div>
+          <select disabled style="width:58%;height:3rem;" id="grade-input3">
+            <option>1.class</option>
+            <option>2.class</option>
+            <option selected>3.class</option>
+            <option>4.class</option>
+          </select>
+          <button type="button" class="btn btn-primary" id="edit-btn3" 
+          onclick="edit3()" style="padding-right:3%;margin-left:5rem;">
+            <i class="fa fa-pencil" style="margin-right:5px;"></i>Edit</button>
+        </div>
+         <div class="input-group check-input" >
+            <div class="input-group-prepend" >
+              <span class="input-group-text" > Projection :</span>
+            </div>
+            <span class="input-group-text" style="width:58%;padding-left:15%;background-color:white;"> 
+              <h5>Yes</h5> <input type="checkbox" aria-label="Checkbox for following text input" checked disabled
+                    name="projection[1][]" id="projection-input31" value="1" style="margin-left:5px;margin-right:20px;width:25px;height:25px;">
+      
+              <h5>No</h5> <input type="checkbox" aria-label="Checkbox for following text input" disabled
+                    name="projection[1][]" id="projection-input32" value="0" style="margin-left:5px;width:25px;height:25px;">
+            </span>
+            <button type="button" class="btn btn-success" id="save-btn3"
+            onclick="edit3()" style="padding-right:2%;margin-left:5rem;display:none;">
+              <i class="fa fa-save" style="margin-right:5px;"></i>Save</button>
+          </div>
+          <div class="input-group check-input" style="padding-top:3% !important;padding-bottom:3% !important;">
+            <div class="input-group-prepend">
+              <span class="input-group-text">Lab Type:</span>
+            </div>
+            <select disabled style="width:58%;" id="lab-input3">
+              <option>Physics</option>
+              <option>Chemistry</option>
+              <option selected>Computer</option>
+              <option>Math</option>
+            </select>
+          </div>                             
+      </div>
+     
+      
+  </div>
+  
+  <div class="bos-div" style="height:28px;"></div>
+
+  <script  src="js/index.js"></script>
+    <script>
+      AOS.init();
+    </script>
+  </body>
+</html>

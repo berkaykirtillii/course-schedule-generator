@@ -1,0 +1,65 @@
+@import "https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css";
+
+body{
+    margin:0;
+    background-image: url("../images/Subtle-Prism.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    font-family: sans-serif;
+    font-weight: bolder;
+    box-sizing:border-box;
+}
+.sign-in{
+    font-weight: bolder;
+    font-size:32px;
+    margin-bottom:2rem !important;
+}
+.special-btn{
+    position: relative !important;
+    border:2px solid #9C4AFF !important;
+    color:white !important;;
+    background-color:#9C4AFF !important;
+    overflow: hidden !important;
+    letter-spacing:1px;
+    font-weight: bold;
+    border-radius:15px !important;
+}
+.special-btn a{
+    color:white !important;
+    text-decoration: none !important;
+}
+.special-btn:hover{
+   background-color:#8842d5 !important;
+}
+.sign-image{
+    padding-top:7rem;
+    background: rgb(73,35,120);
+    background: linear-gradient(24deg, #B993D6 0%, rgba(118,56,194,1) 50%, #8CA6DB 100%);
+
+}
+.btn-block{
+    width:44% !important;
+    margin-left:28%;
+}
+.card-body{
+    padding-bottom:6rem !important;
+}
+.bos-div{
+    height:90px;
+}
+
+#inputEmail,#inputPassword,#inputPasswordAgain{
+    width:70% !important;
+    background: none;
+    outline-style: none;
+    overflow: hidden;
+    border: none;
+}
+.form-label-group{
+    border-bottom: 3px solid #8842d5;
+    width:70%;
+    margin-bottom:6% !important;
+}
+.check-forgot{
+    margin-bottom:3rem ;
+}

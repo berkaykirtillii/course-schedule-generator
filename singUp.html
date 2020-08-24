@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" /> 
+    <title>Sign up Course Scheduler</title>
+    <link rel="stylesheet" type="text/css" href="css/sign.css">
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script type="text/javascript">
+
+        function formkontrol(){
+  
+            email= document.getElementById('inputEmail').value;
+            password= document.getElementById('inputPassword').value;
+            passwordAgain= document.getElementById('inputPasswordAgain').value;
+  
+            var hata= new Array();
+            var sembol = '*|,:<>[]{}`;()@&$#%!+-"/.?';
+  
+            var sembolvar=false;
+            for (var i = 0; i < password.length; i++) {
+                if (sembol.indexOf(password.charAt(i))!=-1){
+                    sembolvar=true;
+                }
+                }
+    
+  
+            if(email=="")
+                hata.push('Lütfen adı boş geçmeyiniz');
+            else if (email.length<4)
+                hata.push('Lütfen adı alanını 3 karakterden büyük giriniz');
+            
+  
+            if (password=='')
+                hata.push('Şifre alanını boş geçmeyiniz');
+            else{
+                if (password!=passwordAgain)
+                    hata.push('Şifreler aynı olmalıdır.');
+  
+                else if (password.length<6)
+                    hata.push('Şifre 6 karekter veya daha büyük olmalıdır.');
+  
+                else if (password.search(/[a-z]/) < 0)
+                        hata.push("Şifre en az bir Küçük harf içermelidir.");
+  
+                else if (password.search(/[A-Z]/) < 0)
+                    hata.push("Şifre en az bir Büyük harf içermelidir.");
+  
+                else if (password.search(/[0-9]/) < 0)
+                    hata.push("Şifre en az bir rakam içermelidir.");
+  
+                else if (sembolvar==false)
+                    hata.push("Şifre en az bir sembol içermelidir.");
+  
+                
+            }
+  
+         if (hata.length > 0) {
+                    alert(hata.join("\n"));
+                    return false;
+        }
+           else alert('Hesabınız Başarıyla oluşturuldu.'); 
+  
+        }
+    </script>  
+</head>
+  <body>
+    <h1 class="text-center" style="color: white;font-family: monospace;">Course Schedule Generator</h1>
+    <div class=" mb-3 offset-2 shadow mb-5 bg-white rounded" style="max-width: 840px;margin-top:5%;border-radius:20px !important;">
+      <div class="row">
+        
+        <div class="col-md-6" >
+          <div class="card-body" >
+            <button type="button" class="btn special-btn" style="float:left;"><a href="indexxx.html">Login</a></button>
+            <br><br><br><br>
+            <h5 class="card-title text-center sign-in">Sing Up</h5>
+            <form class="form-signin" style="position:relative;margin:auto;">
+            
+              <div class="form-label-group" style="margin-bottom:15px; margin-left:15%;">
+                <i class="fa fa-envelope" stlye=""></i>
+                <input type="email" id="inputEmail" class="mail" placeholder="Email address">
+              </div>
+            
+              <div class="form-label-group" style="margin-left:15%;" >
+                <i class="fa fa-lock" style="font-size:22px;"></i>
+                <input type="password" id="inputPassword" placeholder="Password">
+              </div>
+              <div class="form-label-group" style="margin-left:15%;" >
+                <i class="fa fa-lock" style="font-size:22px;"></i>
+                <input type="password" id="inputPasswordAgain" placeholder="Password again">
+              </div>
+              <button class="btn btn-md btn-block special-btn" onclick="formkontrol();" type="submit">Sign Up</button>
+            </form>
+          </div>
+        </div>
+        <div class="col-md-6 sign-image" style="    border-top-right-radius: 20px;
+        border-bottom-right-radius: 20px;">
+            <img src="images/dersProgramı.svg" class="card-img">
+          </div>
+      </div>
+    </div>
+    <div class="bos-div" style="height:75px;"> </div>
+    
+  </body>
+</html>

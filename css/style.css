@@ -1,0 +1,261 @@
+*{
+    margin:0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+body{
+    position:relative;  
+    background: rgb(73,35,120);
+    background: linear-gradient(24deg, #B993D6 0%, rgba(118,56,194,1) 50%, #8CA6DB 100%);
+    background-repeat: no-repeat;
+    
+}
+@-webkit-keyframes hvr-icon-hang {
+    0% {
+      -webkit-transform: translateY(6px);
+      transform: translateY(6px);
+    }
+    50% {
+      -webkit-transform: translateY(2px);
+      transform: translateY(2px);
+    }
+    100% {
+      -webkit-transform: translateY(6px);
+      transform: translateY(6px);
+    }
+  }
+  @keyframes hvr-icon-hang {
+    0% {
+      -webkit-transform: translateY(6px);
+      transform: translateY(6px);
+    }
+    50% {
+      -webkit-transform: translateY(2px);
+      transform: translateY(2px);
+    }
+    100% {
+      -webkit-transform: translateY(6px);
+      transform: translateY(6px);
+    }
+  }
+.arrow{
+    font-size:45px;
+    color:#666;
+    margin-top:6%;
+    cursor:pointer;
+}
+.arrow:hover{
+    color:rgba(118,56,194,1);
+}
+
+
+.tick:hover{
+    color:#449d20;
+}
+
+.arrow p{
+    font-size:12px;
+    margin-top:-1rem;
+    margin-left:-1rem;
+}
+
+.page-user-info{
+    margin-top:10px;
+}
+#dropdownUserButton{
+    float:right;
+}
+.busyDay{
+    background-color: #cc0000 !important;
+}
+.avaliableDay{
+    background-color:#449d20;
+    color:White;
+    padding:25px;
+    font-size:32px;
+    border:1px solid black;
+}
+
+#myDIV{
+    margin:0% 0% 1% 23%;
+}
+.btn-stages {
+    border: none;
+    outline: none;
+    padding: 10px 16px;
+    background-color: #666;
+    cursor: pointer;
+    font-size: 18px;
+  }
+  
+  /* Style the active class, and buttons on mouse-over */
+  .active {
+    background-color: rgba(118,56,194,1);
+    color: white;
+    padding:20px;
+  }
+  .cancel-save-btn{
+      margin-top:3%;
+      margin-bottom:3%;
+  }
+  .cancel-save-btn button{
+         font-size:20px;
+  }
+
+.busyHour{
+    width: 75%;
+    margin-left:10%;
+}
+.busyHours-select table tr td{
+    padding:15px;
+    background-color:#449d20;
+    border:1px solid black;
+    color:white;
+}
+#gradeOption{
+    border-top-right-radius:4px;
+    border-bottom-right-radius:4px;
+}
+.input-group{
+    display:flex !important;
+    margin-left:7rem;
+    margin-bottom:4%;
+}
+.check-input{
+    padding-top:3%;
+    margin-left:2rem !important;
+    margin-bottom:0% !important;
+}
+.input-group-text{
+    width:8rem;
+    height:3rem;
+    font-size:10px !important;
+}
+.card .input-group .form-control{
+    height:3rem;
+}
+.lectures{
+    border-top:1px solid gray !important;
+    border-bottom:1px solid gray !important;
+    display:flex !important;
+    list-style-type: none;
+    padding:10px;
+}
+.edit-pencil{
+    font-size:24px !important;
+    border:0.5px solid gray;
+    border-radius:5px;
+    padding:3px;
+    cursor:pointer;
+}
+.edit-pencil:hover{
+    background-color:#004085;
+    color:#cee5ff;
+}
+.lectures p{
+    margin-top: 5px;
+    margin-bottom: -5px;
+}
+.nexxt{
+    margin-left:9rem;
+    margin-top:8rem;
+}
+.operations-buttons{
+    display:inline-grid;
+    text-align:center;
+}
+.operations-buttons button{
+    width:19rem !important;
+    margin-bottom:1rem;
+    border:solid 1px #004085;
+    background-color: #004085;
+    color:#007bff;   
+}
+.operations-buttons button:hover{
+   color:white;   
+}
+.days-check,.course-hour,.start-hour,.finish-hour{
+    display:flex;
+    margin-bottom:2%;
+}
+.days-check input{
+    width:3rem;
+    height:3rem;
+    margin-left:3rem !important;
+}
+.days-check p{
+    padding-left:2rem;
+}
+#hourOption{
+    border-radius:4px;
+}
+.course-hour, .start-hour, .finish-hour{
+    margin-left:17rem;
+}
+.add{
+    border-radius:50% !important;
+    width:50px;
+    height:50px;
+    margin-left:37px;
+}
+.add i{
+    font-size:25px;
+}
+.adding-lab-class,.adding-special-situation{
+    margin-top:2%;
+    margin-bottom:5%;
+}
+.optionalLunch{
+    display:none;
+}
+.hour-active{
+    display:block !important;
+}
+
+.courses-overlap .row select{
+    margin-left:10px;
+    margin-right:10px;
+    margin-bottom:10px;
+    height:35px;
+}
+.courses-overlap .row button i{
+    margin-left:-3px;
+}
+.dividing-courses{
+    height:35px;
+    margin-right:20px;
+}
+.dividing-part .row{
+    margin-bottom:15px;
+}
+.course-table{
+    display: -webkit-inline-box;
+}
+.course-table select{
+    margin-right:20px;
+    height:35px;
+    font-size: 20px;
+}
+.course-table table th{
+    height:42px;
+    width:80px;
+    text-align:center;
+}
+.course-table table td{
+    cursor:pointer;
+}
+.course-table-finish table td{
+    cursor:default !important;
+}
+.scheduleP{
+    margin-bottom:0 !important;
+    text-align:center;
+}
+.header-check{
+    text-align:center;
+    margin-left:-30px;
+}
+.download{
+    background: linear-gradient(24deg, #B993D6 0%, rgba(118,56,194,1) 50%, #8CA6DB 100%) !important;
+    border-color:rgb(118,56,194,1) !important;
+}

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Add Class</title>
+    
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/fontawesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/fontawesome.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <script>
+      $(function(){
+        $("input:checkbox").on('click',function(){
+            var $box = $(this);
+            if($box.is(":checked")){
+                var group = "input:checkbox[name='" + $box.attr("name") + "']";
+                $(group).prop("checked",false);
+                $box.prop("checked",true);
+            }
+            else{
+                $box.prop("checked",false);
+            }
+        });
+      });
+    </script> 
+  </head>
+  <body >
+    <div class="container" style="border:solid 1px white;background-color:white;">
+        <!-- Organizer header-->
+        <div class="page-user-info row">
+           <h4 class="col-md-6" stlye="float:left;font-weight:bolder !important;">Organizer Add Class Page</h4>
+           <div class="dropdown show col-md-6">
+               
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownUserButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                <i class="fa fa-user"></i>  User22
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownUserButton">
+              <a class="dropdown-item" href="organizerCheckInfos.html">Check Infos</a>
+              <a class="dropdown-item" href="indexxx.html">Logout</a>
+            </div>
+          </div>
+        </div>
+        <hr style="margin-top:6px !important;margin-bottom:0px !important;">
+        <!---->
+
+        <div class="steps">
+            <div id="myDIV">
+              <button class="btn-stages" onclick="window.location='organizerCreateTable.html'">Create Table</button>
+              <button class="btn-stages active">Class-Lab Features</button>
+              <button class="btn-stages" onclick="window.location='organizerSpecialSituation.html'">Special Situation</button>
+              <button class="btn-stages" onclick="window.location='organizerManuelChoosing.html'">Manuel Choosing</button>
+            </div>
+          </div>
+
+          <div class="alert alert-primary" style="width:70%;margin-left:18%;text-align:center;" role="alert">
+            <i class="fa fa-exclamation-circle"></i>
+            Create a new class by entering the properties of the class you want to load or use external file transfer.
+              </div>
+        
+        <!--Organizer Body-->
+        <div class="row">
+          <div class="col-md-4 offset-2">
+            <div class="card" data-aos="zoom-in" data-aos-duration="400">
+                <h4 style="text-align:center;">Add new Class</h4>
+                <hr style="margin-top:0;">
+                <div class="input-group" >
+                   <div class="input-group-prepend">
+                     <span class="input-group-text">Class Code :</span>
+                   </div>
+                   <input type="text" class="form-control"style="margin-right: 14rem;">
+                 </div>
+                 <div class="input-group">
+                   <div class="input-group-prepend">
+                     <span class="input-group-text">Num. of Seat:</span>
+                   </div>
+                   <input type="number"  class="form-control" style="margin-right: 14rem;">
+                 </div>
+                 <div class="input-group" >
+                    <div class="input-group-prepend" >
+                      <span class="input-group-text" > Projection :</span>
+                    </div>
+                    <span class="input-group-text" style="width:35%;padding-left:15px;background-color:white;"> 
+                       Yes <input type="checkbox" aria-label="Checkbox for following text input"
+                            name="projection[1][]" id="Radio1" value="1" style="margin-left:5px;margin-right:20px;">
+
+                       No <input type="checkbox" aria-label="Checkbox for following text input"
+                            name="projection[1][]" id="Radio1" value="0" style="margin-left:5px;">
+                    </span>
+                  </div>
+                 <div class="add-lesson" style="text-align:center;">
+                   <button type="button" class="btn btn-success" data-toggle="modal"
+                    data-target="#adding" style="width:11%;border-radius:50%;">
+                     <i class="fa fa-plus" style="font-size:15px;"></i>
+                     </button> 
+                     <p>Add Class</p>
+                     
+                     
+                 </div>                       
+            </div>
+            <!--Modal-->
+            <div class="modal" id="adding" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header" style="background-color: #449d20;">
+                    <h5 class="modal-title" id="staticBackdropLabel">Added</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                  </div>
+                  <div class="modal-body">
+                     <p>
+                      You have successfully added the Class.</p>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-light" data-dismiss="modal">OK</button>
+                  </div>
+               </div>
+             </div>
+          </div>
+        </div>
+        <div class="col-md-4" style="margin-left:6%;">
+          <div class="card" style="max-height:258px !important;" data-aos="zoom-in" data-aos-duration="400" >
+              <h4 style="text-align:center">Classes</h4>
+              <hr style="margin-top:0;">
+              <ul class="list-group" style="overflow-y: scroll;">
+                <li class="lectures"><p>C507 - Seats: 52 - Projection: Yes</p>
+                   <i class="fa fa-pencil edit-pencil" style="margin-left:60px;"
+                   onclick="window.location='organizerEditClass.html'"></i>
+                </li>
+                <li class="lectures"><p>C503 - Seats: 102 - Projection: No </p>
+                   <i class="fa fa-pencil edit-pencil" style="margin-left:57px;"></i>
+                </li>  
+                <li class="lectures"><p>C501 - Seats: 52 - Projection: No</p>
+                  <i class="fa fa-pencil edit-pencil" style="margin-left:65px;"></i>
+               </li>
+               <li class="lectures"><p>B414 - Seats: 146 - Projection: Yes </p>
+                  <i class="fa fa-pencil edit-pencil" style="margin-left:53px;"></i>
+               </li>             
+             </ul>
+          </div>
+      </div>
+    </div>
+    <div class="cancel-save-btn" style="margin-left:19rem;margin-bottom:-20px;">
+      <div class="row">
+        <div class="col-md-2 offset-2">
+          <button type="button" class="btn btn-danger" onclick="window.location='organizerClassLabFeature.html'">
+            <i class="fa fa-arrow-left" style="margin-right:5px;"></i>Cancel
+          </button> 
+        </div>
+        <div class="col-md-2">
+          <input type="file" id="real-file" hidden="hidden">
+          <button type="button" class="btn btn-primary" id="custom-button"><i class="fa fa-upload"style="margin-right:10px;"></i>Upload File</button>
+          <span id="custom-text"> No file choosen, yet.</span>
+        </div>
+        <div class="col-md-2 " style="margin-left:5%;">
+           <button type="button" class="btn btn-success" data-toggle="modal" data-target="#saving">Save</button>
+           <!-- Modal -->
+           <div class="modal" id="saving" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+               <div class="modal-dialog" role="document">
+                 <div class="modal-content">
+                   <div class="modal-header" style="background-color: #449d20;">
+                     <h5 class="modal-title" id="staticBackdropLabel">Saved</h5>
+                       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                         <span aria-hidden="true">&times;</span>
+                       </button>
+                   </div>
+                   <div class="modal-body">
+                      <p>Your changes have been successful.</p>
+                   </div>
+                   <div class="modal-footer">
+                      <button type="button" class="btn btn-light" data-dismiss="modal" style="font-size:13px;">OK</button>
+                   </div>
+                </div>
+              </div>
+           </div>                  
+      </div> 
+    </div>
+  </div>
+  <div class="offset-6">
+    <div class=" col-md-1 arrow tick" onclick="window.location='finishPage.html'">
+        <i class="fa fa-check-circle"></i>
+        <p style="margin-left:4px;">Finish</p>
+      </div>
+ </div>
+    </div>
+    
+    <div class="bos-div" style="height:137px;"></div>
+
+    <script type="text/javascript">
+      const realFileBtn = document.getElementById("real-file");
+      const customBtn = document.getElementById("custom-button");
+      const customText = document.getElementById("custom-text");
+
+     customBtn.addEventListener("click",function(){
+           realFileBtn.click();
+     });
+     realFileBtn.addEventListener("change",function(){
+           if(realFileBtn.value)
+             customText.innerHTML=realFileBtn.value.match(/[\/\\]([\w\d\s\.\-\(\)]+)$/)[1];
+           else
+             customText.innerText="No file choosen yet."
+     });
+ </script>  
+ <script>
+   AOS.init();
+ </script>     
+  </body>
+</html>

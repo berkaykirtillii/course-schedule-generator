@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Class & Lab Features</title>
+    
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/fontawesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/fontawesome.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+  </head>
+  <body >
+    <div class="container" style="border:solid 1px white;background-color:white;">
+        <!-- Organizer header-->
+        <div class="page-user-info row">
+           <h4 class="col-md-6" stlye="float:left;font-weight:bolder !important;">Organizer Create Table Page</h4>
+           <div class="dropdown show col-md-6">
+               
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownUserButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                <i class="fa fa-user"></i>  User22
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownUserButton">
+              <a class="dropdown-item" href="organizerCheckInfos.html">Check Infos</a>
+              <a class="dropdown-item" href="indexxx.html">Logout</a>
+            </div>
+          </div>
+        </div>
+        <hr style="margin-top:6px !important;margin-bottom:0px !important;">
+        <!---->
+
+        <div class="steps">
+            <div id="myDIV">
+              <button class="btn-stages" onclick="window.location='organizerCreateTable.html'">Create Table</button>
+              <button class="btn-stages active">Class-Lab Features</button>
+              <button class="btn-stages" onclick="window.location='organizerSpecialSituation.html'">Special Situation</button>
+              <button class="btn-stages" onclick="window.location='organizerManuelChoosing.html'">Manuel Choosing</button>
+            </div>
+          </div>
+
+          <div class="alert alert-primary" style="width:40%;margin-left:30%;text-align:center;" role="alert">
+            <i class="fa fa-exclamation-circle"></i>
+            You can add class and lab here.
+              </div>
+        
+        <!--Organizer Body-->
+        <div class="row adding-lab-class">
+            <div class="col-md-2 offset-4" data-aos="fade-right" data-aos-duration="800">
+                <img src="images/teacher-pointing-blackboard.png" class="img-fluid">
+                <h3 style="margin-left:3rem;">Class</h3>
+                <button type="button" class="btn btn-success add" onclick="window.location='organizerAddClass.html'">
+                    <i class="fa fa-plus"></i>
+                </button>
+            </div>
+            <div class="col-md-5 offset-1" data-aos="fade-left" data-aos-duration="800">
+                <img src="images/flask.png" class="img-fluid" >
+                <h3 style="margin-left:4rem;" >Lab</h3>
+                <button type="button" class="btn btn-success add" onclick="window.location='organizerAddLab.html'">
+                    <i class="fa fa-plus"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="bos-div" style="height:137px;"></div>
+    <script>
+      AOS.init();
+    </script>
+       
+  </body>
+</html>

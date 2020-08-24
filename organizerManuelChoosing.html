@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Manuel Choosing</title>
+    
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/fontawesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/fontawesome.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <script>
+      var idOfclicked = "-";
+
+      function findID(id){
+        idOfclicked = id;
+      }
+      function addManuel(){
+        var clicked = document.getElementById(idOfclicked);
+        var crs = document.getElementById(idOfclicked+"course");
+        var classroom = document.getElementById(idOfclicked+"class");
+        
+        var selectedCourse = document.getElementById("courses");
+        var selectedClassroom = document.getElementById("classes");
+
+
+        var strClass = selectedClassroom.options[selectedClassroom.selectedIndex].id;
+        var strCourse = selectedCourse.options[selectedCourse.selectedIndex].id;    
+        crs.innerHTML = strCourse;
+        classroom.innerHTML = strClass;
+      }
+    </script>
+  </head>
+  <body >
+    <div class="container" style="border:solid 1px white;background-color:white;">
+        <!-- Organizer header-->
+        <div class="page-user-info row">
+           <h4 class="col-md-6" stlye="float:left;font-weight:bolder !important;">Organizer Manuel Choosing Page</h4>
+           <div class="dropdown show col-md-6">
+               
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownUserButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                <i class="fa fa-user"></i>  User22
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownUserButton">
+              <a class="dropdown-item" href="organizerCheckInfos.html">Check Infos</a>
+              <a class="dropdown-item" href="indexxx.html">Logout</a>
+            </div>
+          </div>
+        </div>
+        <hr style="margin-top:6px !important;margin-bottom:0px !important;">
+        <!---->
+
+        <div class="steps">
+            <div id="myDIV" style="margin-left:19%;">
+              <button class="btn-stages" onclick="window.location='organizerCreateTable.html'">Create Table</button>
+              <button class="btn-stages" onclick="window.location='organizerClassLabFeature.html'">Class-Lab Features</button>
+              <button class="btn-stages" onclick="window.location='organizerSpecialSituation.html'">Special Situation</button>
+              <button class="btn-stages active">Manuel Choosing</button>
+            </div>
+          </div>
+
+          <div class="alert alert-primary" style="width:50%;margin-left:23%;text-align:center;" role="alert">
+            <i class="fa fa-exclamation-circle"></i>
+            Select the day and time you want to add courses manually.
+              </div>
+        
+        <!--Organizer Body-->
+        
+        <div class="course-table offset-1" data-aos="zoom-in" data-aos-duration="400">
+          <select>
+            <option >1. Class</option>
+            <option><button>2. Class</button></option>
+            <option>3. Class</option>
+            <option>4. Class</option>
+          </select>
+          <table border="1" cellpadding="20" cellspacing="10">
+            <tr>
+              <th></th>
+              <th>08.00-08.50</th>
+              <th>09.00-09.50</th>
+              <th>10.00-10.50</th>
+              <th>11.00-11.50</th>
+              <th>13.00-13.50</th>
+              <th>14.00-14.50</th>
+              <th>15.00-15.50</th>
+              <th>16.00-16.50</th>
+          </tr>
+          <tr>
+              <th>Pazartesi</th>
+              <td id="p1" data-toggle="modal" data-target="#manuel" onclick="findID(this.id)">
+                <p class="scheduleP" id="p1course"></p><p class="scheduleP" id="p1class"></p></td>
+
+              <td id="p2" data-toggle="modal" data-target="#manuel" onclick="findID(this.id)">
+                <p class="scheduleP" id="p2course"></p><p class="scheduleP" id="p2class"></p></td>
+
+              <td id="p3" data-toggle="modal" data-target="#manuel" onclick="findID(this.id)">
+                <p class="scheduleP" id="p3course"></p><p class="scheduleP" id="p3class"></p></td>
+
+              <td id="p4" data-toggle="modal" data-target="#manuel" onclick="findID(this.id)">
+                <p class="scheduleP" id="p4course"></p><p class="scheduleP" id="p4class"></p></td>
+
+              <td id="p5" data-toggle="modal" data-target="#manuel" onclick="findID(this.id)">
+                <p class="scheduleP" id="p5course"></p><p class="scheduleP" id="p5class"></p></td>
+
+              <td id="p6" data-toggle="modal" data-target="#manuel" onclick="findID(this.id)">
+                <p class="scheduleP" id="p6course"></p><p class="scheduleP" id="p6class"></p></td>
+
+              <td id="p7" data-toggle="modal" data-target="#manuel" onclick="findID(this.id)">
+                <p class="scheduleP" id="p7course"></p><p class="scheduleP" id="p7class"></p></td>
+
+              <td id="p8" data-toggle="modal" data-target="#manuel" onclick="findID(this.id)">
+                <p class="scheduleP" id="p8course"></p><p class="scheduleP" id="p8class"></p></td>
+          </tr>
+          <tr>
+              <th>Salı</th>
+              <td id="s1" data-toggle="modal" data-target="#manuel" onclick="findID(this.id)">
+                <p class="scheduleP" id="s1course"></p><p class="scheduleP" id="s1class"></p></td>
+
+              <td id="s2" data-toggle="modal" data-target="#manuel" onclick="findID(this.id)">
+                <p class="scheduleP" id="s2course"></p><p class="scheduleP" id="s2class"></p></td>
+
+              <td id="s3" data-toggle="modal" data-target="#manuel" onclick="findID(this.id)">
+                <p class="scheduleP" id="s3course"></p><p class="scheduleP" id="s3class"></p></td>
+
+              <td id="s4" data-toggle="modal" data-target="#manuel" onclick="findID(this.id)">
+                <p class="scheduleP" id="s4course"></p><p class="scheduleP" id="s4class"></p></td>
+
+              <td id="s5" data-toggle="modal" data-target="#manuel" onclick="findID(this.id)">
+                <p class="scheduleP" id="s5course"></p><p class="scheduleP" id="s5class"></p></td>
+
+              <td id="s6" data-toggle="modal" data-target="#manuel" onclick="findID(this.id)">
+                <p class="scheduleP" id="s6course"></p><p class="scheduleP" id="s6class"></p></td>
+
+              <td id="s7" data-toggle="modal" data-target="#manuel" onclick="findID(this.id)">
+                <p class="scheduleP" id="s7course"></p><p class="scheduleP" id="s7class"></p></td>
+
+              <td id="s8" data-toggle="modal" data-target="#manuel" onclick="findID(this.id)">
+                <p class="scheduleP" id="s8course"></p><p class="scheduleP" id="s8class"></p></td>
+          </tr>
+          <tr>
+              <th>Çarşamba</th>
+              <td id="c1" data-toggle="modal" data-target="#manuel" onclick="findID(this.id)">
+                <p class="scheduleP" id="c1course"></p><p class="scheduleP" id="c1class"></p></td>
+
+              <td id="c2" data-toggle="modal" data-target="#manuel" onclick="findID(this.id)">
+                <p class="scheduleP" id="c2course"></p><p class="scheduleP" id="c2class"></p></td>
+
+              <td id="c3" data-toggle="modal" data-target="#manuel" onclick="findID(this.id)">
+                <p class="scheduleP" id="c3course"></p><p class="scheduleP" id="c3class"></p></td>
+
+              <td id="c4" data-toggle="modal" data-target="#manuel" onclick="findID(this.id)">
+                <p class="scheduleP" id="c4course"></p><p class="scheduleP" id="c4class"></p></td>
+
+              <td id="c5" data-toggle="modal" data-target="#manuel" onclick="findID(this.id)">
+                <p class="scheduleP" id="c5course"></p><p class="scheduleP" id="c5class"></p></td>
+
+              <td id="c6" data-toggle="modal" data-target="#manuel" onclick="findID(this.id)">
+                <p class="scheduleP" id="c6course"></p><p class="scheduleP" id="c6class"></p></td>
+
+              <td id="c7" data-toggle="modal" data-target="#manuel" onclick="findID(this.id)">
+                <p class="scheduleP" id="c7course"></p><p class="scheduleP" id="c7class"></p></td>
+
+              <td id="c8" data-toggle="modal" data-target="#manuel" onclick="findID(this.id)">
+                <p class="scheduleP" id="c8course"></p><p class="scheduleP" id="c8class"></p></td>
+          </tr>
+          <tr>
+              <th>Perşembe</th>
+              <td id="pe1" data-toggle="modal" data-target="#manuel" onclick="findID(this.id)">
+                <p class="scheduleP" id="pe1course"></p><p class="scheduleP" id="pe1class"></p></td>
+
+              <td id="pe2" data-toggle="modal" data-target="#manuel" onclick="findID(this.id)">
+                <p class="scheduleP" id="pe2course"></p><p class="scheduleP" id="pe2class"></p></td>
+
+              <td id="pe3" data-toggle="modal" data-target="#manuel" onclick="findID(this.id)">
+                <p class="scheduleP" id="pe3course"></p><p class="scheduleP" id="pe3class"></p></td>
+
+              <td id="pe4" data-toggle="modal" data-target="#manuel" onclick="findID(this.id)">
+                <p class="scheduleP" id="pe4course"></p><p class="scheduleP" id="pe4class"></p></td>
+
+              <td id="pe5" data-toggle="modal" data-target="#manuel" onclick="findID(this.id)">
+                <p class="scheduleP" id="pe5course"></p><p class="scheduleP" id="pe5class"></p></td>
+
+              <td id="pe6" data-toggle="modal" data-target="#manuel" onclick="findID(this.id)">
+                <p class="scheduleP" id="pe6course"></p><p class="scheduleP" id="pe6class"></p></td>
+
+              <td id="pe7" data-toggle="modal" data-target="#manuel" onclick="findID(this.id)">
+                <p class="scheduleP" id="pe7course"></p><p class="scheduleP" id="pe7class"></p></td>
+
+              <td id="pe8" data-toggle="modal" data-target="#manuel" onclick="findID(this.id)">
+                <p class="scheduleP" id="pe8course"></p><p class="scheduleP" id="pe8class"></p></td>
+          </tr>
+          <tr>
+              <th>Cuma</th>
+              <td id="cu1" data-toggle="modal" data-target="#manuel" onclick="findID(this.id)">
+                <p class="scheduleP" id="cu1course"></p><p class="scheduleP" id="cu1class"></p></td>
+
+              <td id="cu2" data-toggle="modal" data-target="#manuel" onclick="findID(this.id)">
+                <p class="scheduleP" id="cu2course"></p><p class="scheduleP" id="cu2class"></p></td>
+
+              <td id="cu3" data-toggle="modal" data-target="#manuel" onclick="findID(this.id)">
+                <p class="scheduleP" id="cu3course"></p><p class="scheduleP" id="cu3class"></p></td>
+
+              <td id="cu4" data-toggle="modal" data-target="#manuel" onclick="findID(this.id)">
+                <p class="scheduleP" id="cu4course"></p><p class="scheduleP" id="cu4class"></p></td>
+                
+              <td id="cu5" data-toggle="modal" data-target="#manuel" onclick="findID(this.id)">
+                <p class="scheduleP" id="cu5course"></p><p class="scheduleP" id="cu5class"></p></td>
+
+              <td id="cu6" data-toggle="modal" data-target="#manuel" onclick="findID(this.id)">
+                <p class="scheduleP" id="cu6course"></p><p class="scheduleP" id="cu6class"></p></td>
+
+              <td id="cu7" data-toggle="modal" data-target="#manuel" onclick="findID(this.id)">
+                <p class="scheduleP" id="cu7course"></p><p class="scheduleP" id="cu7class"></p></td>
+                
+              <td id="cu8" data-toggle="modal" data-target="#manuel" onclick="findID(this.id)">
+                <p class="scheduleP" id="cu8course"></p><p class="scheduleP" id="cu8class"></p></td>
+          </tr>
+         </table>
+        
+        </div>
+         <!-- Modal -->
+      <div class="modal" id="manuel" data-backdrop="static" tabindex="1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header" style="background-color: #004085;">
+              <h5 class="modal-title" id="staticBackdropLabel" style="color:white;">Manuel Choosing Course</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body text-center">
+              <p>
+                You must select the course and class for manual addition</p>
+                   <select id="courses">
+                     <option selected>Select Course</option>
+                     <option id="CENG310">CENG310</option>
+                     <option id="MATH101">MATH101</option>
+                     <option id="CENG307">CENG307</option>
+                     <option id="ENGR404">ENGR404</option>
+                   </select>
+                   <select id="classes">
+                    <option selected>Select Classrom</option>
+                    <option id="C507">C507</option>
+                    <option id="B414">B414</option>
+                    <option id="C503">C503</option>
+                    <option id="AB109">AB109</option>
+                  </select>
+            </div>
+            
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" onclick="addManuel()" data-dismiss="modal">OK</button>
+            </div>
+         </div>
+       </div>
+    </div>
+        
+
+        <div class="cancel-save-btn">
+            <div class="row" style="margin-left:3%;">
+              <div class="col-md-6 offset-5">
+                   <button type="button" class="btn btn-success" data-toggle="modal" data-target="#saving">Save</button>
+               <!-- Modal -->
+                   <div class="modal" id="saving" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                       <div class="modal-dialog" role="document">
+                         <div class="modal-content">
+                           <div class="modal-header" style="background-color: #449d20;">
+                             <h5 class="modal-title" id="staticBackdropLabel">Saved</h5>
+                               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                 <span aria-hidden="true">&times;</span>
+                               </button>
+                           </div>
+                           <div class="modal-body">
+                                  <p>Your changes have been successful.</p>
+                           </div>
+                        </div>
+                      </div>
+                   </div>                  
+              </div> 
+            </div>
+          </div>
+          <div class="offset-5">
+            <div class="arrow tick" onclick="window.location='finishPage.html'" style="margin-left: 9%;margin-top: -30px;">
+                <i class="fa fa-check-circle"></i>
+                <p style="margin-left:4px;">Finish</p>
+              </div>
+         </div>
+        
+
+    </div>
+    
+    <div id="bos-div" style="height:16px !important;"></div>
+       <script>
+         AOS.init();
+       </script>
+       
+  </body>
+</html>
